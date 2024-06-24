@@ -1,0 +1,22 @@
+git add .
+git commit -m \"Temporary commit to save current work\"
+git checkout --orphan latest_branch
+git add -A
+git commit -m \"Clean slate\"
+git branch -D main
+git branch -m main
+git push -f origin main
+git lfs install
+git lfs track \".dll\"
+git lfs track \".so\"
+git lfs track \"*.dylib\"
+git add .gitattributes
+git commit -m \"Add Git LFS tracking\"
+git push origin main
+git add .gitignore
+git commit -m \"Update .gitignore\"
+git push origin main
+git rm -r --cached Library/
+git add .
+git commit -m \"Remove cached files and apply .gitignore\"
+git push origin main"
